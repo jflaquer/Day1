@@ -16,9 +16,17 @@ You can return the answer in any order.
 :type target: int
 :rtype: List[int]     
 """
+def twoSum(nums,target):
+    visited = {}
+    for i,num in enumerate(nums):
+        complement = (target - num)
+        if complement in visited:
+            return [visited[complement],i]
+        else:
+            visited[num] = i
+    print("end")
+        
 
-def twoSum(nums, target):
-    return
 
 def bruteForceTwoSum(nums, target):
     #For every number in the list
@@ -35,4 +43,4 @@ def bruteForceTwoSum(nums, target):
     #Print "end" once the function has iterated through all numbers in the list
     print("end")
 
-bruteForceTwoSum(nums,target)
+twoSum(nums,target)
